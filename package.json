@@ -1,0 +1,22 @@
+{
+    "name": "url-shortner-nodejs",
+    "version": "1.0.0",
+    "description": "Project for Url Shortening",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "dev": "nodemon app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Nilanjan",
+    "license": "MIT",
+    "dependencies": {
+        "ejs": "^3.1.2",
+        "express": "^4.17.1",
+        "mongoose": "^5.9.13",
+        "shortid": "^2.2.15"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.3"
+    }
+}
