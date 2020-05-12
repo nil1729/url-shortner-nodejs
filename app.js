@@ -2,11 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const ShortUrl = require('./models/shortUrl');
 const shortid = require('shortid');
-const baseUrl = 'https://url-nil.herokuapp.com/';
+
+const baseUrl = ''; // Your Domain Name
 
 
 const app = express();
-const mongoURI = 'mongodb+srv://blog:nilanjan@cluster0-ysai2.mongodb.net/test?retryWrites=true&w=majority';
+const mongoURI = ''; // Your MongoDB Key
+
+
 const connectDB = async() => {
     try {
         await mongoose.connect(mongoURI, {
