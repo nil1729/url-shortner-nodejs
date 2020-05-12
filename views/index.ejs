@@ -10,41 +10,54 @@
 
 <body>
     <div class="container">
-        <h1>Url Shortening Service</h1>
+        <h1 class="text-center">Url Shortening Service</h1>
         <form action="/shortUrls" method="POST" class="my-4 form-inline">
             <label for="fullUrl" class="sr-only">Url:</label>
             <input class="form-control col mr-2" required type="url" name="fullUrl" id="fullUrl" placeholder="Url">
             <button type="submit" class="btn btn-success">Shorten</button>
         </form>
-        <table class="table table-bordered table-responsive">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Full Url</th>
-                    <th>Short Url</th>
-                    <th>Clicks</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% shortUrls.forEach(shortUrl => { %>
+        <% if(typeof shortUrl != 'undefined'){ %>
+            <table class="table table-bordered table-responsive">
+                <thead class="thead-dark">
                     <tr>
-                        <td>
-                            <a href="<%= shortUrl.full %>">
-                                <%= shortUrl.full.substr(0,120) %>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="<%= shortUrl.short %>">
+                        <th>Short Url</th>
+                        <th class="text-center">Full Url</th>
+                        <th>Clicks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center" style="vertical-align: middle;">
+                            <a href="<%= shortUrl.short %>" id="tiny-url">
                                 <%= shortUrl.short %>
                             </a>
+                            <button onclick="copy()" class="btn text-wrap  btn-warning btn-copy" style="width: 6rem; padding: 2px;">
+                                <input type="text" class="sr-only url" value="<%= baseUrl + shortUrl.short %>">
+                                Copy
+                            </button>
                         </td>
-                        <td>
+                        <td class="col text-center" style="vertical-align: middle;">
+                            <a href="<%= shortUrl.full %>">
+                                <%= shortUrl.full.length > 100 ? (shortUrl.full.substr(0,100) + '......') : shortUrl.full %>
+                            </a>
+                        </td>
+                        <td style="vertical-align: middle;" class="text-center">
                             <%= shortUrl.clicks  %>
                         </td>
                     </tr>
-                    <% }) %>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+            <% } %>
     </div>
+    <script>
+        const btnCopy = document.querySelector('.btn-copy');
+        const url = document.querySelector('.url');
+        const copy = () => {
+            url.select();
+            url.setSelectionRange(0, 1000);
+            document.execCommand("copy");
+        };
+    </script>
 </body>
 
 </html>

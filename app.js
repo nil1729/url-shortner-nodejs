@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const ShortUrl = require('./models/shortUrl');
-// const baseUrl = 'http://localhost/5000/';
+const shortid = require('shortid');
+const baseUrl = 'https://url-nil.herokuapp.com/';
 
 
 const app = express();
@@ -23,17 +24,22 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/', async(req, res) => {
-    const shortUrls = await ShortUrl.find();
-    res.render('index', { shortUrls: shortUrls });
+    res.render('index');
 });
 
 app.post('/shortUrls', async(req, res) => {
-    await ShortUrl.create({ full: req.body.fullUrl });
-    res.redirect('/');
+    let url = await ShortUrl.findOne({ full: req.body.fullUrl });
+    if (url) {
+        // console.log(url);
+        return res.render('index', { shortUrl: url, baseUrl: baseUrl });
+    }
+    url = await ShortUrl.create({ full: req.body.fullUrl, short: shortid.generate() });
+    // console.log(url);
+    res.render('index', { shortUrl: url, baseUrl: baseUrl });
 });
 
 app.get('/:shortUrl', async(req, res) => {
-    console.log(req.params);
+    // console.log(req.params);s
     const shortUrl = await ShortUrl.findOne({ short: req.params.shortUrl });
     if (shortUrl == null) return res.sendStatus(404);
     shortUrl.clicks++;
