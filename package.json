@@ -6,7 +6,10 @@
     "scripts": {
         "start": "node server",
         "server": "nodemon server",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "client": "npm start --prefix client",
+        "dev" : "concurrently \"npm run server\" \"npm run client\"",
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
     },
     "author": "Nilanjan Deb",
     "license": "MIT",
@@ -19,6 +22,7 @@
         "shortid": "^2.2.15"
     },
     "devDependencies": {
+        "concurrently": "^5.2.0",
         "nodemon": "^2.0.3"
     }
 }
