@@ -1,16 +1,18 @@
 {
-    "name": "url-shortner-nodejs",
-    "version": "1.0.0",
+    "name": "url-shortener",
+    "version": "2.1.0",
     "description": "Project for Url Shortening",
-    "main": "app.js",
+    "main": "server.js",
     "scripts": {
-        "start": "node app.js",
-        "dev": "nodemon app.js",
+        "start": "node server",
+        "server": "nodemon server",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "author": "Nilanjan",
+    "author": "Nilanjan Deb",
     "license": "MIT",
     "dependencies": {
+        "config": "^3.3.1",
+        "cors": "^2.8.5",
         "ejs": "^3.1.2",
         "express": "^4.17.1",
         "mongoose": "^5.9.13",
