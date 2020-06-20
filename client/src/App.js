@@ -32,7 +32,7 @@ const App = () => {
       'Content-Type': 'application/json'
     },
     // There have Some issues when I was building this on Development Mode, on send request via PROXY so it's better to use axios baseURL
-    baseURL: 'http://localhost:5000' // In production Don't need to add this.
+    //baseURL: 'http://localhost:5000' // In production Don't need to add this.
   };
 
   // Call APIs
