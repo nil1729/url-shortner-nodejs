@@ -1,31 +1,31 @@
-## URL Shortener
-* ##### URL shortner made using NodeJS and MongoDB served over Heroku. [Check here](https://url--nil.herokuapp.com/).
+# URL Shortener
+* #### URL shortner made using NodeJS and MongoDB served over Heroku. [Check here](https://url--nil.herokuapp.com/).
 
-* ##### Github Repository Link [here](https://github.com/nil1729/url-shortner-nodejs).
+* #### Github Repository Link [here](https://github.com/nil1729/url-shortner-nodejs).
 
 ---
 
-### Website Preview 
+## Website Preview 
 * <img src="./preview/1.png">
 
 ---
 
-### Setup Locally
+## Setup Locally
 
-##### Prerequisites
+#### Prerequisites
 
 * [MongoDB](https://www.mongodb.com/cloud/atlas).
 * [Node JS](https://nodejs.org/).
 * [React JS](https://reactjs.org/).
 
-##### Instructions
+#### Instructions
 
 ```
 >> git clone https://github.com/nil1729/url-shortner-nodejs.git
 >> cd url-shortner-nodejs
 >> npm install 
 ```
-##### In `config` directory
+#### In `config` directory
 * Create a `default.json` file.
 * Add your `MongoDB Atlas` credentials in `"mongoURI"` field.
 ```
