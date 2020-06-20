@@ -7,7 +7,7 @@ import M from 'materialize-css/dist/js/materialize';
 import Spinner from './components/Spinner';
 import InputURL from './components/InputURL';
 import Result from './components/Result';
-
+import Credit from './components/Credit';
 
 const App = () => {
 
@@ -69,6 +69,7 @@ const App = () => {
           loading ? <Spinner/> : <Result result={result} notify={notify}/>
         }
       </div>
+      <Credit name={'Nilanjan Deb'}/>
     </div>
   );
 }
