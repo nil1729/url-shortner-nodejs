@@ -69,7 +69,7 @@ const App = () => {
           loading ? <Spinner/> : <Result result={result} notify={notify}/>
         }
       </div>
-      <Credit name={'Nilanjan Deb'}/>
+      <Credit name={'Nilanjan Deb (nil1729)'}/>
     </div>
   );
 }
