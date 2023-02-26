@@ -1,6 +1,7 @@
 node_modules
 default.json
 .env
+.vscode
 
 # dependencies
 /client/.pnp

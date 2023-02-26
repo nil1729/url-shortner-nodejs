@@ -1,0 +1,22 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    name: Deploying Application
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploying application to EC2
+        env:
+          PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY  }}
+          HOSTNAME: ${{ secrets.SERVER_HOST  }}
+          USER_NAME: ${{ secrets.SERVER_USERNAME  }}
+
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} bash sync.sh
