@@ -30,7 +30,7 @@ const InputURL = ({ sendURL }) => {
     <div className='row'>
       <form onSubmit={onSubmit}>
         <div className='col s12'>
-          <h3 className='center'>URL Shortener</h3>
+          <h3 className='center'>URL Shortener [NodeJS Application]</h3>
           <div className='input-field'>
             <i className='material-icons prefix'>insert_link</i>
             <input required type='url' className='validate' value={input} onChange={onChange} />
