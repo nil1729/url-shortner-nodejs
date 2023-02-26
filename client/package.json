@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:5050",
   "name": "url-shortener",
   "version": "1.2.0",
   "private": false,

@@ -1,28 +1,29 @@
 {
-    "name": "url-shortener",
-    "version": "2.1.0",
-    "description": "Project for Url Shortening",
-    "main": "server.js",
-    "scripts": {
-        "start": "node server",
-        "server": "nodemon server",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "client": "npm start --prefix client",
-        "dev": "concurrently \"npm run server\" \"npm run client\"",
-        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
-    },
-    "author": "Nilanjan Deb",
-    "license": "MIT",
-    "dependencies": {
-        "cors": "^2.8.5",
-        "ejs": "^3.1.2",
-        "express": "^4.17.1",
-        "mongoose": "^5.9.13",
-        "shortid": "^2.2.15"
-    },
-    "devDependencies": {
-        "concurrently": "^5.2.0",
-        "dotenv": "^10.0.0",
-        "nodemon": "^2.0.3"
-    }
+  "name": "url-shortener",
+  "version": "2.1.0",
+  "description": "Project for Url Shortening",
+  "main": "server.js",
+  "scripts": {
+    "setup:env": "npm install && npm install --prefix client",
+    "start": "node server",
+    "server": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm run build --prefix client"
+  },
+  "author": "Nilanjan Deb",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.13",
+    "shortid": "^2.2.15"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.3"
+  }
 }
